@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f5ef" />
+    <title>Account | LIsleep.</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="account-screen">
+      <header class="account-header">
+        <button class="back-button" type="button" aria-label="Go back">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M19 12H5M12 19l-7-7 7-7"></path>
+          </svg>
+          <span>Back</span>
+        </button>
+        <a class="brand" href="index.html" aria-label="LIsleep home">LIsleep<span>.</span></a>
+      </header>
+
+      <section class="account-content" aria-labelledby="account-title">
+        <div class="account-heading">
+          <p class="eyebrow"><span class="status-dot"></span> YOUR PROFILE</p>
+          <h1 id="account-title">Your account<span>.</span></h1>
+          <p class="account-intro">A little about you and your sleep journey.</p>
+        </div>
+
+        <div class="account-card">
+          <div class="account-person">
+            <div class="account-avatar" aria-hidden="true">LF</div>
+            <div>
+              <p class="account-label">ACCOUNT HOLDER</p>
+              <p class="account-name">Louis F.</p>
+            </div>
+          </div>
+
+          <dl class="account-details">
+            <div class="account-detail">
+              <dt>Username</dt>
+              <dd>Louis F.</dd>
+            </div>
+            <div class="account-detail">
+              <dt>Joined</dt>
+              <dd>11/2/24</dd>
+            </div>
+            <div class="account-detail">
+              <dt>Subscription</dt>
+              <dd><span class="subscription-pill">Focus-Pro</span></dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <footer class="account-footer">
+        <span>ONE NIGHT AT A TIME</span>
+        <span class="note-line"></span>
+        <span>REST WELL, TOMORROW</span>
+      </footer>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>

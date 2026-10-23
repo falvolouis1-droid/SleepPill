@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f5ef" />
+    <title>LIsleep.</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="home-screen">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="LIsleep home">LIsleep<span>.</span></a>
+        <nav class="navigation" aria-label="Main navigation">
+          <button class="nav-button is-active" type="button" data-view="home" aria-current="page">Home</button>
+          <button class="nav-button" type="button" data-view="sleep-records">Sleep Records</button>
+          <button class="nav-button" type="button" data-view="tips">Tips</button>
+        </nav>
+        <div class="profile-menu">
+          <button
+            class="profile-mark"
+            type="button"
+            aria-label="Open profile menu"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="profile-dropdown"
+          >
+            <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+              <circle cx="10" cy="6.5" r="3.1"></circle>
+              <path d="M3.8 17c.35-3.1 2.8-5.1 6.2-5.1s5.85 2 6.2 5.1"></path>
+            </svg>
+            <span class="profile-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="profile-dropdown" id="profile-dropdown" aria-label="Profile menu" hidden>
+            <p class="profile-membership">Focus-Pro Member Since 9/4/25</p>
+            <button class="profile-option" type="button" data-action="account">Account</button>
+            <button class="profile-option" type="button" data-action="subscription">Subscription</button>
+            <span class="menu-divider" aria-hidden="true"></span>
+            <button class="profile-option is-logout" type="button">Log Out</button>
+          </div>
+        </div>
+      </header>
+
+      <section class="welcome" aria-labelledby="welcome-title">
+        <div class="welcome-copy">
+          <p class="eyebrow"><span class="status-dot"></span> YOUR SPACE TO UNWIND</p>
+          <h1 id="welcome-title">Make room<br />for <span>better sleep.</span></h1>
+          <p class="intro">
+            Small, gentle steps toward more restful nights start here.
+          </p>
+          <button class="start-button" type="button">
+            Settle in <span aria-hidden="true">↗</span>
+          </button>
+        </div>
+
+        <div class="night-art" role="img" aria-label="A crescent moon shining over a quiet night">
+          <span class="star star-one"></span>
+          <span class="star star-two"></span>
+          <span class="star star-three"></span>
+          <span class="star star-four"></span>
+          <div class="moon"></div>
+          <div class="horizon horizon-back"></div>
+          <div class="horizon horizon-front"></div>
+          <p class="art-caption">A softer end to your day</p>
+        </div>
+      </section>
+
+      <section class="records-view" aria-labelledby="records-title" hidden>
+        <div class="records-content">
+          <header class="records-heading">
+            <div>
+              <p class="eyebrow"><span class="status-dot"></span> YOUR SLEEP JOURNAL</p>
+              <h1 id="records-title">Sleep records<span>.</span></h1>
+            </div>
+            <p class="records-intro">One dot for every night. A little more insight, one day at a time.</p>
+          </header>
+
+          <div class="records-layout">
+            <section class="records-calendar" aria-labelledby="year-grid-title">
+              <div class="records-calendar-heading">
+                <div>
+                  <h2 id="year-grid-title">Your year in sleep</h2>
+                  <p id="year-grid-description">Choose a day to add or update a sleep log.</p>
+                </div>
+                <span class="year-badge" id="records-year"></span>
+              </div>
+              <div class="sleep-dot-grid" id="sleep-dot-grid" role="group" aria-label="Daily sleep logs"></div>
+              <ul class="sleep-legend" aria-label="Sleep duration color key">
+                <li><span class="legend-dot legend-unlogged"></span>Not logged</li>
+                <li><span class="legend-dot legend-zero"></span>0 hours</li>
+                <li><span class="legend-dot legend-short"></span>0:01–2:59</li>
+                <li><span class="legend-dot legend-orange"></span>3:00–4:59</li>
+                <li><span class="legend-dot legend-yellow"></span>5:00–6:59</li>
+                <li><span class="legend-dot legend-light-green"></span>7:00–8:29</li>
+                <li><span class="legend-dot legend-dark-green"></span>8:30+</li>
+              </ul>
+            </section>
+
+            <section class="sleep-entry-card" aria-labelledby="sleep-entry-title">
+              <p class="entry-eyebrow">MAKE A NOTE</p>
+              <h2 id="sleep-entry-title">Log a night</h2>
+              <p class="entry-description">Choose a date and enter your total sleep time.</p>
+              <form class="sleep-entry-form">
+                <label class="field-label date-field-label" for="sleep-date">Choose a night</label>
+                <input class="sleep-input date-input" id="sleep-date" name="sleep-date" type="date" required />
+                <div class="duration-label-row">
+                  <span class="field-label">How long did you sleep?</span>
+                  <span class="duration-hint">Hours + minutes</span>
+                </div>
+                <div class="duration-inputs">
+                  <label class="duration-field">
+                    <input class="sleep-input" id="sleep-hours" name="sleep-hours" type="number" min="0" max="24" step="1" value="0" aria-label="Sleep duration hours" required />
+                    <span>hours</span>
+                  </label>
+                  <label class="duration-field">
+                    <input class="sleep-input" id="sleep-minutes" name="sleep-minutes" type="number" min="0" max="59" step="1" value="0" aria-label="Sleep duration minutes" required />
+                    <span>minutes</span>
+                  </label>
+                </div>
+                <p class="form-hint">You can enter 0 hours for a confirmed zero-sleep night.</p>
+                <button class="start-button save-sleep-button" type="submit">
+                  Confirm &amp; save log <span aria-hidden="true">↗</span>
+                </button>
+              </form>
+              <p class="device-storage-note">Sleep logs and your current entry are saved on this device in this browser.</p>
+              <p class="records-status" aria-live="polite" aria-atomic="true"></p>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="tips-view" aria-labelledby="tips-title" hidden>
+        <div class="tips-content">
+          <header class="tips-heading">
+            <p class="eyebrow"><span class="status-dot"></span> A GENTLER NIGHT STARTS HERE</p>
+            <h1 id="tips-title">Sleep tips<span>.</span></h1>
+            <p>Small habits can help make space for more restful nights.</p>
+          </header>
+          <ol class="tips-list">
+            <li>Consistent sleep schedule (waking and sleeping at the exact same time daily)</li>
+            <li>Complete bedroom darkness using blackout curtains or an eye mask</li>
+            <li>Cool ambient room temperature (around 18°C or 65°F)</li>
+            <li>Complete cessation of caffeine at least 8 to 10 hours before bed</li>
+            <li>No heavy meals or alcohol within 3 hours of sleeping</li>
+            <li>Strict screen ban (no phones, tablets, or computers) for 60 minutes prior to rest</li>
+            <li>Morning sunlight exposure within 30 minutes of waking to anchor the circadian rhythm</li>
+            <li>White noise machine or earplugs to eliminate auditory sleep disruptions</li>
+            <li>Magnesium glycinate supplementation taken roughly 30 to 60 minutes before bedtime</li>
+            <li>Wind-down routine (such as reading fiction or light stretching) to signal the nervous system for rest</li>
+          </ol>
+        </div>
+      </section>
+
+      <footer class="bottom-note">
+        <span>ONE NIGHT AT A TIME</span>
+        <span class="note-line"></span>
+        <span>REST WELL, TOMORROW</span>
+      </footer>
+    </main>
+    <div class="subscription-overlay" id="subscription-dialog" hidden>
+      <section
+        class="subscription-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="subscription-title"
+        aria-describedby="subscription-description"
+        tabindex="-1"
+      >
+        <button class="subscription-close" type="button" aria-label="Close subscription options">
+          <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+            <path d="m5 5 10 10M15 5 5 15"></path>
+          </svg>
+        </button>
+        <header class="subscription-heading">
+          <p class="eyebrow"><span class="status-dot"></span> YOUR PLAN</p>
+          <h2 id="subscription-title">Choose your pace<span>.</span></h2>
+          <p id="subscription-description">Find the right level of support for more restful nights.</p>
+        </header>
+        <div class="subscription-plans">
+          <article class="plan-card">
+            <div class="plan-card-heading">
+              <div>
+                <h3>Free</h3>
+                <p class="plan-price">$0<span>/month</span></p>
+              </div>
+              <span class="plan-mark plan-mark-free" aria-hidden="true">○</span>
+            </div>
+            <p class="plan-summary">A simple place to start.</p>
+            <ul class="plan-features">
+              <li>Access to Sleep Records</li>
+            </ul>
+            <button class="plan-action purchase-button" type="button" data-plan-action="purchase">
+              Purchase
+            </button>
+          </article>
+          <article class="plan-card plan-card-pro">
+            <div class="plan-card-heading">
+              <div>
+                <h3>Focus-Pro</h3>
+                <p class="plan-price">$15<span>/month</span></p>
+              </div>
+              <span class="plan-mark plan-mark-pro" aria-hidden="true">✦</span>
+            </div>
+            <p class="plan-summary">Your complete sleep toolkit.</p>
+            <ul class="plan-features">
+              <li>Access to all features</li>
+            </ul>
+            <button
+              class="plan-action owned-button"
+              type="button"
+              data-plan-action="owned"
+            >
+              <span class="owned-check" aria-hidden="true">✓</span> Already Owned
+            </button>
+          </article>
+        </div>
+        <p class="subscription-feedback" aria-live="polite" aria-atomic="true"></p>
+      </section>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
